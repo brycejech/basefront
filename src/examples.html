@@ -99,10 +99,20 @@
             <script type="text/javascript">
                 (function(){
                     var counterWrapper = document.getElementById('counter');
-                    counter.innerHTML = 'Screen Width: ' + window.innerWidth + 'px';
-                    window.addEventListener('resize', function(){
-                        counterWrapper.innerHTML = 'Screen Width: ' + window.innerWidth + 'px';
-                    });
+                    function getSize(num){
+                        if(num < 768) return 'Extra Small';
+                        if(num < 992) return 'Small';
+                        if(num < 1200) return 'Medium';
+                        if(num < 1500) return 'Large';
+                        return 'Extra Large';
+                    }
+                    function output(){
+                        counterWrapper.innerHTML =
+                            'Screen Width: ' + window.innerWidth + 'px<br />Screen Size: ' +
+                            getSize(window.innerWidth);
+                    }
+                    output();
+                    window.addEventListener('resize', output);
                 })();
             </script>
 
