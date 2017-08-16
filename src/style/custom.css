@@ -1,9 +1,10 @@
-// Custom styles for exmple page
-[class*='col-']{
-    background-color: #3A3A3A;
+/* Custom styles for examples page */
+
+[class*="col-"]{
     color: white;
     border-radius: 3px;
     border: 1px solid white;
+    background-color: #3A3A3A;
 }
 
 .row{
