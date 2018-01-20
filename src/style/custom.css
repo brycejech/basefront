@@ -10,3 +10,24 @@
 .row{
     margin: 15px 0;
 }
+
+footer{
+    background-color: #383838;
+    color: #FDFDFD;
+    padding: 25px;
+}
+footer a{
+    color: #FDFDFD;
+    font-weight: bold;
+}
+footer a:hover{
+    text-decoration: underline;
+}
+footer .outline{
+    padding: 15px 25px;
+    border: 1px solid #FDFDFD;
+    border-radius: 3px;
+}
+.emoji{
+    font-size: 2.4rem;
+}
