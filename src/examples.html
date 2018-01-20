@@ -7,18 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- StyleSheets -->
-    <link rel="stylesheet" type="text/css" href="style/basefront.css" />
+    <link rel="stylesheet" type="text/css" href="style/basefront.min.css" />
     <link rel="stylesheet" type="text/css" href="style/custom.css" />
 
     <!-- Scripts -->
     <script type="text/javascript" src="js/script.js"></script>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:600" rel="stylesheet">
 </head>
 <body>
     <div id="page-wrapper">
         <div class="container">
+            <h1 class="u-cntr">Typography</h1>
             <h1>Heading 1</h1>
             <h2>Heading 2</h2>
             <h3>Heading 3</h3>
@@ -26,7 +25,7 @@
             <h5>Heading 5</h5>
             <h6>Heading 6</h6>
             <p>
-                Headings are Raleway, all other text is Open Sans
+                Headings are Source Sans Pro, all other text is Open Sans
             </p>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus iste maxime nihil perferendis commodi, voluptate fuga, dicta aliquam vero labore, quaerat. Aliquam, et consequuntur, soluta repellat voluptas similique veritatis ad.
@@ -36,7 +35,10 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, ullam, laborum fugit, consequuntur cum neque sapiente nihil consequatur repellat nam odit maxime facilis. Incidunt accusamus sapiente maxime animi, consectetur nulla.
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam impedit officiis eius qui similique suscipit dolore, nemo expedita nam facilis quo ad? Eaque commodi recusandae architecto inventore ipsam sed quibusdam.
             </p>
+
             <hr />
+
+            <h1 class="u-cntr">Forms</h1>
 
             <div class="input-group">
                 <label for="textbox">Label</label>
@@ -58,9 +60,9 @@
 
             <hr />
 
-            <h3>Simple Grid</h3>
+            <h1 class="u-cntr">Simple Grid</h1>
             <p>
-                If device-width < 768px, all .col-N elements are width: 100%,
+                If device-width < 768px, all <span class="u-hl">.col-*</span> elements are width: 100%,
                 otherwise, they are N/12 wide.
             </p>
             <div class="grid">
@@ -95,7 +97,7 @@
 
             <hr />
 
-            <h3>Responsive Grid</h3>
+            <h1 class="u-cntr">Responsive Grid</h1>
             <div id="counter"></div>
             <script type="text/javascript">
                 (function(){
@@ -142,36 +144,84 @@
             </div>
             <h4>Column Media Queries</h4>
             <table>
+                <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th>Device Width</th>
+                    </tr>
+                </thead>
                 <tr>
-                    <th>Class</th>
-                    <th>Device Width</th>
-                </tr>
-                <tr>
-                    <td>.col-xs-*</td>
+                    <td><span class="u-hl">.col-xs-*</span></td>
                     <td>&lt; 768px</td>
                 </tr>
                 <tr>
-                    <td>.col-sm-*</td>
+                    <td><span class="u-hl">.col-sm-*</span></td>
                     <td>&gt; 768px</td>
                 </tr>
                 <tr>
-                    <td>.col-md-*</td>
+                    <td><span class="u-hl">.col-md-*</span></td>
                     <td>&gt; 992px</td>
                 </tr>
                 <tr>
-                    <td>.col-lg-*</td>
+                    <td><span class="u-hl">.col-lg-*</span></td>
                     <td>&gt; 1200px</td>
                 </tr>
                 <tr>
-                    <td>.col-xl-*</td>
+                    <td><span class="u-hl">.col-xl-*</span></td>
                     <td>&gt; 1500px</td>
                 </tr>
             </table>
-            <br>
-            <br>
-            <br>
-            <br>
+
+            <hr>
+
+            <h1 class="u-cntr">Utility Classes</h1>
+            <table class="fixed">
+                <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th>Use</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td><span class="u-hl">.u-cb</span></td>
+                    <td>Clear floats</td>
+                </tr>
+                <tr>
+                    <td><span class="u-hl">.u-fl-r</span></td>
+                    <td>Float left</td>
+                </tr>
+                <tr>
+                    <td><span class="u-hl">.u-fl-l</span></td>
+                    <td>Float right</td>
+                </tr>
+                <tr>
+                    <td><span class="u-hl">.u-strike</span></td>
+                    <td>Strikethrough text</td>
+                </tr>
+                <tr>
+                    <td><span class="u-hl">.u-ul</span></td>
+                    <td>Underline text</td>
+                </tr>
+                <tr>
+                    <td><span class="u-hl">.u-td-none</span></td>
+                    <td>No underline text</td>
+                </tr>
+                <tr>
+                    <td><span class="u-hl">.u-cntr</span></td>
+                    <td>Center text</td>
+                </tr>
+                <tr>
+                    <td><span class="u-hl">.u-hl</span></td>
+                    <td>Highlight text</td>
+                </tr>
+            </table>
         </div>
     </div>
+    <hr>
+    <footer class="u-cntr">
+        <span class="outline">
+            Made with <span class="emoji">&#x2764;</span> by <a href="https://github.com/brycejech" target="_blank" class="u-td-none">Bryce Jech</a>
+        </span>
+    </footer>
 </body>
 </html>
