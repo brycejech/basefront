@@ -20,7 +20,7 @@
                 <img class="nucleon" src="/img/atom.svg" alt="Nucleon Logo">
                 <h1>Nucleon</h1>
                 <img class="nucleon" src="/img/atom.svg" alt="Nucleon Logo">
-                <h3>A responsive CSS micro-framework</h3>
+                <h3>A fully responsive CSS micro-framework</h3>
             </div>
             <hr>
             <p class="u-cntr">
@@ -33,30 +33,36 @@
 
             <h1>Responsive Grid</h1>
             <p>
-                Nucleon comes with a flexbox-based grid system that falls back to floated inline-block elements in older browsers. The grid uses padding-based guttering, all columns run up against one other and have 1rem of padding the provides inner spacing.
+                Nucleon comes with a flexbox-based grid system that falls back to floated inline-block elements in older browsers. Columns have 1rem of padding-based guttering to provide inner spacing.
             </p>
-            <br>
+            <p>
+                All breakpoints are mobile-first, meaning that they apply to that specific breakpoint and all breakpoints above it (unless a breakpoint for a larger size is also specified). For example, a .col-md-6 column is 6 columns wide for medium, large, and extra large devices, but not for small and extra small devices.
+            </p>
+            <p>
+                Resizing your browser window to see it in action.
+            </p>
             <div class="grid">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-4 col-md-6 col-lg-4 bg-gray">
-                        col-xs-12 col-sm-4 col-md-6 col-lg-4
+                    <div class="col-md-6 col-xl-3 bg-gray">.col-md-6 .col-xl-3</div>
+                    <div class="col-md-6 col-xl-3 bg-gray">.col-md-6 .col-xl-3</div>
+                    <div class="col-md-6 col-xl-3 bg-gray">.col-md-6 .col-xl-3</div>
+                    <div class="col-md-6 col-xl-3 bg-gray">.col-md-6 .col-xl-3</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-lg-4 bg-gray">
+                        .col-sm-6 .col-lg-4
                     </div>
-                    <div class="col-xs-12 col-sm-4 col-md-6 col-lg-4 bg-gray">
-                        col-xs-12 col-sm-4 col-md-6 col-lg-4
+                    <div class="col-sm-6 col-lg-4 bg-gray">
+                        .col-sm-6 .col-lg-4
                     </div>
-                    <div class="col-xs-12 col-sm-4 col-md-12 col-lg-4 bg-gray">
-                        col-xs-12 col-sm-4 col-md-12 col-lg-4
+                    <div class="col-lg-4 bg-gray">
+                        .col-lg-4
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-6 col-md-4 bg-gray">col-sm-6 col-md-4</div>
-                    <div class="col-sm-6 col-md-4 bg-gray">col-sm-6 col-md-4</div>
-                    <div class="col-sm-12 col-md-4 bg-gray">col-sm-12 col-md-4</div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-8 col-md-4 bg-gray">col-xs-8 col-md-4</div>
-                    <div class="col-xs-4 col-md-4 bg-gray">col-xs-4 col-md-4</div>
-                    <div class="col-xs-12 col-md-4 bg-gray">col-xs-12 col-md-4</div>
+                    <div class="col-xs-8 col-md-4 bg-gray">.col-xs-8 .col-md-4</div>
+                    <div class="col-xs-4 col-md-4 bg-gray">.col-xs-4 .col-md-4</div>
+                    <div class="col-xs-12 col-md-4 bg-gray">.col-xs-12 .col-md-4</div>
                 </div>
             </div>
 
@@ -75,7 +81,7 @@
                     }
                     function output(){
                         counterWrapper.innerHTML =
-                            '<strong>Current Screen Width:</strong> ' + window.innerWidth + 'px <small><em>'+ getSize(window.innerWidth) + '</em></small>';
+                            '<strong>Current Screen Size:</strong> ' + window.innerWidth + 'px <small><em>'+ getSize(window.innerWidth) + '</em></small>';
                     }
                     output();
                     window.addEventListener('resize', output);
@@ -84,7 +90,7 @@
             </script>
 
             <br>
-            <h4>Column Media Queries</h4>
+            <h4>Media Query Breakpoints</h4>
             <table>
                 <thead>
                     <tr>
@@ -118,13 +124,12 @@
 
             <h1>Simple Grid</h1>
             <p>
-                If device-width < 768px, all <span class="u-hl">.col-*</span> elements are width: 100%,
-                otherwise, they are N/12 wide.
+                Nucleon's simple grid columns do not specify a breakpoint (e.g. <span class="u-hl">.col-4</span>). These classes apply to screen sizes greater than 768px. For screen sizes less than 768px, simple columns are 100% width.
+            </p>
+            <p>
+                In other words, if screen size > 768px, all <span class="u-hl">.col-*</span> elements are N/12 columns wide, otherwise, they are 12 columns wide.
             </p>
             <div class="grid">
-                <div class="row">
-                    <div class="col-12">.col-12</div>
-                </div>
                 <div class="row">
                     <div class="col-1 bg-gray">.col-1</div>
                     <div class="col-11 bg-gray">.col-11</div>
@@ -150,6 +155,9 @@
                     <div class="col-6 bg-gray">.col-6</div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-12 bg-gray">.col-12</div>
+            </div>
 
             <hr>
 
@@ -158,15 +166,14 @@
             <div class="row">
                 <div class="col-8">
                     <p>
+                        All font sizes are based on <span class="u-hl">rems</span>. Body font size is adjusted so that <span class="u-hl">1rem == 10px</span> (e.g. 1.6rem is 16px).
+                    </p>
+                    <p>
                         Headings are Source Sans Pro, all other text is Open Sans
                     </p>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus iste maxime nihil perferendis commodi, voluptate fuga, dicta aliquam vero labore, quaerat. Aliquam, et consequuntur, soluta repellat voluptas similique veritatis ad.
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. In magni qui excepturi a sed, vel quasi culpa beatae sit, accusamus corrupti. Laborum, error! Ipsum amet, officiis aliquam laboriosam delectus voluptatum!
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, ullam, laborum fugit, consequuntur cum neque sapiente nihil consequatur repellat nam odit maxime facilis. Incidunt accusamus sapiente maxime animi, consectetur nulla.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam impedit officiis eius qui similique suscipit dolore, nemo expedita nam facilis quo ad? Eaque commodi recusandae architecto inventore ipsam sed quibusdam.
                     </p>
                 </div>
                 <div class="col-4">
@@ -179,7 +186,7 @@
                 </div>
             </div>
 
-            <hr />
+            <hr>
 
             <h1>Forms</h1>
 
