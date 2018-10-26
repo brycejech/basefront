@@ -81,8 +81,12 @@ $xl:     1500px
 
 // Auto size generic cols
 .col-auto
-    width: auto !important
-    flex-basis: auto !important
+    width: $twelve !important
+    flex-basis: $twelve !important
+
+    @media screen and (min-width: $small)
+        width: auto !important
+        flex-basis: auto !important
 
 // Offsets for all viewports
 .col-offset-1
