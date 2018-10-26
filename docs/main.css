@@ -20,11 +20,20 @@
 .bg-gray {
   color: white; }
 
+[class*="col-"].bg-gray, .col.bg-gray {
+  text-align: center; }
+
 .row {
   margin: 15px 0; }
 
 #headings h1, #headings h2, #headings h3, #headings h4, #headings h5, #headings h6 {
   display: inline-block; }
+
+.grid {
+  margin-bottom: 3rem; }
+
+.color-grid [class*="col-"] {
+  min-height: 50px; }
 
 footer {
   background-color: #383838;
