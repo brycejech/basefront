@@ -6,8 +6,10 @@
     <!-- Responsive Meta Tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <link rel="icon" type="image/png" href="/img/favicon.png" />
+    
     <!-- StyleSheets -->
-    <link rel="stylesheet" type="text/css" href="style/basefront.min.css" />
+    <link rel="stylesheet" type="text/css" href="/dist/nucleon.min.css" />
     <style>
         /* Custom styles for examples page */
 
@@ -43,9 +45,6 @@
             font-size: 2.4rem;
         }
     </style>
-
-    <!-- Scripts -->
-    <script type="text/javascript" src="js/script.js"></script>
 
 </head>
 <body>
@@ -134,6 +133,8 @@
             <h1 class="u-cntr">Responsive Grid</h1>
             <div id="counter"></div>
             <script type="text/javascript">
+                'use strict';
+
                 (function(){
                     var counterWrapper = document.getElementById('counter');
                     function getSize(num){
@@ -151,6 +152,7 @@
                     output();
                     window.addEventListener('resize', output);
                 })();
+
             </script>
 
             <div class="grid">
