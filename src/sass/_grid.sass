@@ -52,7 +52,7 @@ $xl:     1500px
     display: block
 
     display: flex
-    flex: 0 1 auto
+    // flex: 0 1 auto
     flex-direction: row
     flex-wrap: wrap
     align-items: flex-start
@@ -73,12 +73,16 @@ $xl:     1500px
     float: left
     width: $twelve
 
-    flex: 0 1 auto
-    flex-basis: $twelve
+    flex: 1 1 auto
 
 [class*='col-']:empty
     padding: 0
     padding-top: 1px // maintain width
+
+// Auto size generic cols
+.col-auto
+    width: auto !important
+    flex-basis: auto !important
 
 // Offsets for all viewports
 .col-offset-1
