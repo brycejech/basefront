@@ -23,12 +23,9 @@ select
 input:focus,
 textarea:focus,
 select:focus
-    border-color: #33B4F0
-    box-shadow: 0 0 5px 0 rgba(51, 180, 240, 0.5), 0 0 2px 0 rgba(51, 180, 240, 0.5) inset
-    -webkit-box-shadow: 0 0 5px 0 rgba(51, 180, 240, 0.5), 0 0 2px 0 rgba(51, 180, 240, 0.5) inset
+    border-color: $light-blue
     outline: none
-button:focus
-    outline: none
+
 label
     font-family: 'Raleway', sans-serif
     font-size: 1.8rem
@@ -36,7 +33,11 @@ label
     text-align: left
     font-weight: 500
 
-
 .input-group
     display: block
     margin-bottom: 10px
+
+.has-error
+    border-color: $red !important
+.has-success
+    border-color: $green !important
