@@ -1,5 +1,5 @@
-# basefront
+# Nucleon
 
-Base files for starting a front-end project. Also includes basefront.css, a minimalistic CSS microframework, which contains a 12-column grid, some basic resets, typography, utility classes, and basic form styles.
+A simple, dependency-free CSS micro-framework purpose built for creating responsive websites and user interfaces.
 
-Goal here is *minimalism*, a la skeleton.css, combined with the power and flexibility of SASS, and a simple, though *slightly* more featured grid system. Oh, and no margin-based gutters!
+Nucleon features a fully responsive grid system, styled form elements and buttons, tables, utility classes, typography, and more.
