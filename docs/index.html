@@ -223,7 +223,7 @@
 
             <h2>Colors</h2>
             <p>
-                Nucleon color options
+                Nucleon provides the following background, text, and border colors. Each color also comes with a light and dark version. Light/dark variants use the Sass functions <span class="u-hl">lighten( )</span> and <span class="u-hl">darken( )</span> at 15%.
             </p>
             <div class="grid color-grid">
                 <div class="row u-cntr">
@@ -244,7 +244,15 @@
                     <div class="col-2 bg-fuscia text-light">Fuscia</div>
                 </div>
             </div>
-
+            <p class="orange-select">
+                Background colors are specified by using the <span class="u-hl">.bg-colorname</span> or <span class="u-hl">.bg-colorname-light/dark</span> classes. For example, to give an element a green background, give it the class <span class="u-hl">.bg-green</span>. For a dark green background, use <span class="u-hl">.bg-green-dark</span>. Note that background classes do not change text color.
+            </p>
+            <p>
+                Text is colored using the <span class="u-hl">.text-colorname</span> or <span class="u-hl">.text-colorname-light/dark</span> classes. For example, to make some text red, apply the <span class="u-hl">.text-red</span> class.
+            </p>
+            <p>
+                Borders are colored using the <span class="u-hl">.border-colorname</span> or <span class="u-hl">.border-colorname-light/dark</span> classes. To make an elements border dark purple, give it the <span class="u-hl">.border-purple-dark</span> class. Note that the <span class="u-hl">.border-colorname</span> classes do not add borders, they only change the <span class="u-hl">border-color</span> property. To add a border, use the <span class="u-hl">.border</span> or <span class="u-hl">border-2</span> classes.
+            </p>
             <hr>
 
             <h2>Utility Classes</h2>
