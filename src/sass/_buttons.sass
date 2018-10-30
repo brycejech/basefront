@@ -1,5 +1,62 @@
 @import 'colors'
 
+
 .btn,
+button,
+input[type="button"],
+input[type="submit"]
+    position: relative
+    display: inline-block
+    width: auto
+    margin: 8px 3px
+    padding: 6px 10px
+    vertical-align: baseline
+
+    font-family: 'Source Sans Pro', sans-serif
+    font-size: 1.8rem
+    color: $gray
+    text-decoration: none
+    white-space: normal
+    text-align: center
+
+    border: 1px solid rgba($gray, .25)
+    border-radius: 3px
+    background-color: transparent
+
+    cursor: pointer
+
+    transition: all .2s ease-out
+
+    &:hover
+        border-color: rgba($gray, .75)
+
+.btn-primary
+    background-color: darken($nucleon, 6%) !important
+    border-color: $dark-nucleon !important
+    color: $white !important
+    &:hover
+        background-color: $dark-nucleon !important
+
+.btn-success
+    background-color: darken($green, 8%) !important
+    border-color: $dark-green !important
+    color: $white !important
+    &:hover
+        background-color: $dark-green !important
+
+.btn-error
+    background-color: darken($red, 8%) !important
+    border-color: $dark-red !important
+    color: $white !important
+    &:hover
+        background-color: $dark-red !important
+
+.btn-warning
+    background-color: darken($amber, 2%) !important
+    border-color: darken($amber, 8%) !important
+    color: $white !important
+    &:hover
+        background-color: darken($amber, 5%) !important
+
 button:focus
     outline: none
