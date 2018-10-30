@@ -39,34 +39,10 @@
                 All breakpoints are mobile-first, meaning that they apply to that specific breakpoint and all breakpoints above it (unless a breakpoint for a larger size is also specified). For example, a .col-md-6 column is 6 columns wide for medium, large, and extra large devices, but not for small and extra small devices.
             </p>
             <p>
-                Resizing your browser window to see it in action.
+                Resize your browser window to see it in action.
             </p>
-            <div class="grid">
-                <div class="row">
-                    <div class="col-md-6 col-xl-3 bg-gray">.col-md-6, .col-xl-3</div>
-                    <div class="col-md-6 col-xl-3 bg-gray">.col-md-6, .col-xl-3</div>
-                    <div class="col-md-6 col-xl-3 bg-gray">.col-md-6, .col-xl-3</div>
-                    <div class="col-md-6 col-xl-3 bg-gray">.col-md-6, .col-xl-3</div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6 col-lg-4 bg-gray">
-                        .col-sm-6, .col-lg-4
-                    </div>
-                    <div class="col-sm-6 col-lg-4 bg-gray">
-                        .col-sm-6, .col-lg-4
-                    </div>
-                    <div class="col-lg-4 bg-gray">
-                        .col-lg-4
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-8 col-md-4 bg-gray">.col-xs-8, .col-md-4</div>
-                    <div class="col-xs-4 col-md-4 bg-gray">.col-xs-4, .col-md-4</div>
-                    <div class="col-xs-12 col-md-4 bg-gray">.col-xs-12, .col-md-4</div>
-                </div>
-            </div>
+            <p><span id="counter"></span></p>
 
-            <div id="counter"></div>
             <script type="text/javascript">
                 'use strict';
 
@@ -88,6 +64,50 @@
                 })();
 
             </script>
+
+            <div class="row">
+                <div class="col-md-6 col-xl-3 bg-gray">.col-md-6 .col-xl-3</div>
+                <div class="col-md-6 col-xl-3 bg-gray">.col-md-6 .col-xl-3</div>
+                <div class="col-md-6 col-xl-3 bg-gray">.col-md-6 .col-xl-3</div>
+                <div class="col-md-6 col-xl-3 bg-gray">.col-md-6 .col-xl-3</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-lg-4 bg-gray">
+                    .col-sm-6 .col-lg-4
+                </div>
+                <div class="col-sm-6 col-lg-4 bg-gray">
+                    .col-sm-6 .col-lg-4
+                </div>
+                <div class="col-lg-4 bg-gray">
+                    .col-lg-4
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 col-md-4 bg-gray">.col-xs-8 .col-md-4</div>
+                <div class="col-xs-4 col-md-4 bg-gray">.col-xs-4 .col-md-4</div>
+                <div class="col-xs-12 col-md-4 bg-gray">.col-xs-12 .col-md-4</div>
+            </div>
+
+<code>
+&lt;!-- Responsive Grid Example --&gt;
+
+&lt;div class="row"&gt;
+    &lt;div class="col-md-6 col-xl-3"&gt;.col-md-6 .col-xl-3&lt;/div&gt;
+    &lt;div class="col-md-6 col-xl-3"&gt;.col-md-6 .col-xl-3&lt;/div&gt;
+    &lt;div class="col-md-6 col-xl-3"&gt;.col-md-6 .col-xl-3&lt;/div&gt;
+    &lt;div class="col-md-6 col-xl-3"&gt;.col-md-6 .col-xl-3&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-sm-6 col-lg-4"&gt;.col-sm-6 .col-lg-4&lt;/div&gt;
+    &lt;div class="col-sm-6 col-lg-4"&gt;.col-sm-6 .col-lg-4&lt;/div&gt;
+    &lt;div class="col-lg-4"&gt;.col-lg-4&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-xs-8 col-md-4"&gt;.col-xs-8 .col-md-4&lt;/div&gt;
+    &lt;div class="col-xs-4 col-md-4"&gt;.col-xs-4 .col-md-4&lt;/div&gt;
+    &lt;div class="col-xs-12 col-md-4"&gt;.col-xs-12 .col-md-4&lt;/div&gt;
+&lt;/div&gt;
+</code>
 
             <br>
             <h4>Media Query Breakpoints</h4>
@@ -127,49 +147,79 @@
             <p>
                 In other words, if screen size > 768px, all <span class="u-hl">.col-*</span> elements are N/12 columns wide, otherwise, they are 12 columns wide.
             </p>
-            <div class="grid">
-                <div class="row">
-                    <div class="col-1 bg-gray">.col-1</div>
-                    <div class="col-11 bg-gray">.col-11</div>
-                </div>
-                <div class="row">
-                    <div class="col-2 bg-gray">.col-2</div>
-                    <div class="col-10 bg-gray">.col-10</div>
-                </div>
-                <div class="row">
-                    <div class="col-3 bg-gray">.col-3</div>
-                    <div class="col-9 bg-gray">.col-9</div>
-                </div>
-                <div class="row">
-                    <div class="col-4 bg-gray">.col-4</div>
-                    <div class="col-8 bg-gray">.col-8</div>
-                </div>
-                <div class="row">
-                    <div class="col-5 bg-gray">.col-5</div>
-                    <div class="col-7 bg-gray">.col-7</div>
-                </div>
-                <div class="row">
-                    <div class="col-6 bg-gray">.col-6</div>
-                    <div class="col-6 bg-gray">.col-6</div>
-                </div>
-                <div class="row">
-                    <div class="col-12 bg-gray">.col-12</div>
-                </div>
+
+            <div class="row">
+                <div class="col-1 bg-gray">.col-1</div>
+                <div class="col-11 bg-gray">.col-11</div>
             </div>
+            <div class="row">
+                <div class="col-2 bg-gray">.col-2</div>
+                <div class="col-10 bg-gray">.col-10</div>
+            </div>
+            <div class="row">
+                <div class="col-3 bg-gray">.col-3</div>
+                <div class="col-9 bg-gray">.col-9</div>
+            </div>
+            <div class="row">
+                <div class="col-4 bg-gray">.col-4</div>
+                <div class="col-8 bg-gray">.col-8</div>
+            </div>
+            <div class="row">
+                <div class="col-5 bg-gray">.col-5</div>
+                <div class="col-7 bg-gray">.col-7</div>
+            </div>
+            <div class="row">
+                <div class="col-6 bg-gray">.col-6</div>
+                <div class="col-6 bg-gray">.col-6</div>
+            </div>
+            <div class="row">
+                <div class="col-12 bg-gray">.col-12</div>
+            </div>
+
+<code>
+&lt;!-- Simple Grid Example --&gt;
+
+&lt;div class="row"&gt;
+    &lt;div class="col-1"&gt;.col-1&lt;/div&gt;
+    &lt;div class="col-11"&gt;.col-11&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-2"&gt;.col-2&lt;/div&gt;
+    &lt;div class="col-10"&gt;.col-10&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-3"&gt;.col-3&lt;/div&gt;
+    &lt;div class="col-9"&gt;.col-9&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-4"&gt;.col-4&lt;/div&gt;
+    &lt;div class="col-8"&gt;.col-8&lt;/div&gt;
+&lt;/div&gt;
+...
+</code>
 
             <h2>Auto-Sizing Columns</h2>
             <p>
                 Columns can be auto-sized using the <span class="u-hl">.col-auto</span> class. These columns will be evenly sized in a row element for screen sizes greater than 768px. <em>Auto-sized columns only apply to browsers that support flexbox.</em>
             </p>
-            <div class="grid">
-                <div class="row">
-                    <div class="col-auto bg-gray">.col-auto</div>
-                    <div class="col-auto bg-gray">.col-auto</div>
-                    <div class="col-auto bg-gray">.col-auto</div>
-                    <div class="col-auto bg-gray">.col-auto</div>
-                    <div class="col-auto bg-gray">.col-auto</div>
-                </div>
+            <div class="row">
+                <div class="col-auto bg-gray">.col-auto</div>
+                <div class="col-auto bg-gray">.col-auto</div>
+                <div class="col-auto bg-gray">.col-auto</div>
+                <div class="col-auto bg-gray">.col-auto</div>
+                <div class="col-auto bg-gray">.col-auto</div>
             </div>
+<code>
+&lt;!-- Auto-Size Columns Example --&gt;
+
+&lt;div class="row"&gt;
+    &lt;div class="col-auto"&gt;.col-auto&lt;/div&gt;
+    &lt;div class="col-auto"&gt;.col-auto&lt;/div&gt;
+    &lt;div class="col-auto"&gt;.col-auto&lt;/div&gt;
+    &lt;div class="col-auto"&gt;.col-auto&lt;/div&gt;
+    &lt;div class="col-auto"&gt;.col-auto&lt;/div&gt;
+&lt;/div&gt;
+</code>
 
             <hr>
 
@@ -180,7 +230,7 @@
                         All font sizes are based on <span class="u-hl">rems</span>. Body font size is adjusted so that <span class="u-hl">1rem == 10px</span> (e.g. 1.6rem is 16px).
                     </p>
                     <p>
-                        Headings are Source Sans Pro, all other text is Open Sans
+                        Headings, labels, and buttons are Source Sans Pro, all other text is Open Sans. Fonts are loaded via CSS import from <a href="https://fonts.google.com" target="_blank" rel="noopener nofollow external">Google Fonts</a>
                     </p>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus iste maxime nihil perferendis commodi, voluptate fuga, dicta aliquam vero labore, quaerat. Aliquam, et consequuntur, soluta repellat voluptas similique veritatis ad.
@@ -196,6 +246,81 @@
                     <h6>Heading 6</h6>&nbsp;&nbsp;<small>2.8rem (28px)</small><br>
                 </div>
             </div>
+
+            <hr>
+
+            <h2>Buttons</h2>
+            <p>
+                Nucleon comes with 5 button types: standard, primary, success, error, and warning. An element is styled as a button if it has the <span class="u-hl">.btn</span> class or if it is an input of <span class="u-hl">type="button"</span> or <span class="u-hl">type="submit"</span>
+            </p>
+            <div class="row">
+                <div class="col-2">
+                    <label>.btn</label>
+                    <input class="btn" type="button" role="button" value="Button Input">
+                    <a href="#" class="btn">Anchor Button</a>
+                    <button type="button" role="button">Button Element</button>
+                    <input type="submit" role="button" value="Submit Button">
+                </div>
+                <div class="col-2">
+                    <label>.btn.btn-primary</label>
+                    <input class="btn btn-primary" type="button" role="button" value="Button Input">
+                    <a href="#" class="btn btn-primary">Anchor Button</a>
+                    <button class="btn-primary" type="button" role="button">Button Element</button>
+                    <input class="btn-primary" type="submit" role="button" value="Submit Button">
+                </div>
+                <div class="col-2">
+                    <label>.btn.btn-success</label>
+                    <input class="btn btn-success" type="button" role="button" value="Button Input">
+                    <a href="#" class="btn btn-success">Anchor Button</a>
+                    <button class="btn-success" type="button" role="button">Button Element</button>
+                    <input class="btn-success" type="submit" role="button" value="Submit Button">
+                </div>
+                <div class="col-2">
+                    <label>.btn.btn-error</label>
+                    <input class="btn btn-error" type="button" role="button" value="Button Input">
+                    <a href="#" class="btn btn-error">Anchor Button</a>
+                    <button class="btn-error" type="button" role="button">Button Element</button>
+                    <input class="btn-error" type="submit" role="button" value="Submit Button">
+                </div>
+                <div class="col-2">
+                    <label>.btn.btn-warning</label>
+                    <input class="btn btn-warning" type="button" role="button" value="Button Input">
+                    <a href="#" class="btn btn-warning">Anchor Button</a>
+                    <button class="btn-warning" type="button" role="button">Button Element</button>
+                    <input class="btn-warning" type="submit" role="button" value="Submit Button">
+                </div>
+            </div>
+
+<code>
+&lt;!-- Standard Buttons --&gt;
+
+&lt;!-- Button Input --&gt;
+&lt;input class="btn" type="button" role="button"&gt;Button Input&lt;/input&gt;
+
+&lt;!-- Anchor Button --&gt;
+&lt;a href="#" class="btn"&gt;Anchor Button&lt;/a&gt;
+
+&lt;!-- Button Element --&gt;
+&lt;button type="button" role="button"&gt;Button Element&lt;/button&gt;
+
+&lt;!-- Submit Button --&gt;
+&lt;input type="submit" role="button" value="Submit Button"&gt;
+
+
+&lt;!-- Colored Buttons --&gt;
+
+&lt;!-- Primary Button --&gt;
+&lt;button class="btn btn-primary"&gt;Button Primary&lt;/button&gt;
+
+&lt;!-- Success Button --&gt;
+&lt;a href="#" class="btn btn-success"&gt;Success Button&lt;/a&gt;
+
+&lt;!-- Error Button --&gt;
+&lt;input type="button" class="btn btn-error" value="Error Button"&gt;
+
+&lt;!-- Warning Button --&gt;
+&lt;input type="submit" class="btn btn-warning" value="Warning Button"&gt;
+</code>
 
             <hr>
 
