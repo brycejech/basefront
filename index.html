@@ -29,81 +29,96 @@
     <a href="https://github.com/BryceJech/nucleon" target="_blank" rel="noopener nofollow external"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
     <div id="page-wrapper">
         <div class="container">
-            <div id="site-heading">
-                <img class="nucleon" src="/img/atom.svg" alt="Nucleon Logo">
-                <h1>Nucleon</h1>
-                <img class="nucleon" src="/img/atom.svg" alt="Nucleon Logo">
-                <h3>A fully responsive CSS micro-framework</h3>
-            </div>
-            <hr>
-            <p class="text-center">
-                A simple, dependency-free CSS micro-framework purpose built for creating responsive websites and user interfaces.
-                <br><br>
-                Nucleon features a fully responsive grid system, styled form elements and buttons, tables, utility classes, typography, and more.
-            </p>
-
-            <div class="text-center">
-                <a href="/release/v1.2.0/nucleon.zip" class="btn btn-primary" download>Download v1.2.0</a>
-            </div>
-
-            <hr>
-
-            <h3>Responsive Grid</h3>
-            <p>
-                Nucleon comes with a flexbox-based grid system that falls back to floated inline-block elements in older browsers. Columns have 1rem of padding-based guttering to provide inner spacing.
-            </p>
-            <p>
-                All breakpoints are mobile-first, meaning that they apply to that specific breakpoint and all breakpoints above it (unless a breakpoint for a larger size is also specified). For example, a .col-md-6 column is 6 columns wide for medium, large, and extra large devices, but not for small and extra small devices.
-            </p>
-            <p>
-                Resize your browser window to see it in action.
-            </p>
-            <p><span id="counter"></span></p>
-
-            <script type="text/javascript">
-                'use strict';
-
-                (function(){
-                    var counterWrapper = document.getElementById('counter');
-                    function getSize(num){
-                        if(num < 768) return 'Extra Small';
-                        if(num < 992) return 'Small';
-                        if(num < 1200) return 'Medium';
-                        if(num < 1500) return 'Large';
-                        return 'Extra Large';
-                    }
-                    function output(){
-                        counterWrapper.innerHTML =
-                            '<strong>Current Screen Size:</strong> ' + window.innerWidth + 'px <small><em>'+ getSize(window.innerWidth) + '</em></small>';
-                    }
-                    output();
-                    window.addEventListener('resize', output);
-                })();
-
-            </script>
-
-            <div class="row">
-                <div class="col-md-6 col-xl-3 bg-gray">.col-md-6 .col-xl-3</div>
-                <div class="col-md-6 col-xl-3 bg-gray">.col-md-6 .col-xl-3</div>
-                <div class="col-md-6 col-xl-3 bg-gray">.col-md-6 .col-xl-3</div>
-                <div class="col-md-6 col-xl-3 bg-gray">.col-md-6 .col-xl-3</div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6 col-lg-4 bg-gray">
-                    .col-sm-6 .col-lg-4
+            <!--
+                ==============
+                HEADER SECTION
+                ==============
+            -->
+            <section id="header-section">
+                <div id="site-heading">
+                    <img class="nucleon" src="/img/atom.svg" alt="Nucleon Logo">
+                    <h1>Nucleon</h1>
+                    <img class="nucleon" src="/img/atom.svg" alt="Nucleon Logo">
+                    <h3>A fully responsive CSS micro-framework</h3>
                 </div>
-                <div class="col-sm-6 col-lg-4 bg-gray">
-                    .col-sm-6 .col-lg-4
+                <hr>
+                <p class="text-center">
+                    A simple, dependency-free CSS micro-framework purpose built for creating responsive websites and user interfaces.
+                    <br><br>
+                    Nucleon features a fully responsive grid system, styled form elements and buttons, tables, utility classes, typography, and more.
+                </p>
+
+                <div class="text-center">
+                    <a href="/release/v1.2.0/nucleon.zip" class="btn btn-primary" download>Download v1.2.0</a>
                 </div>
-                <div class="col-lg-4 bg-gray">
-                    .col-lg-4
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-8 col-md-4 bg-gray">.col-xs-8 .col-md-4</div>
-                <div class="col-xs-4 col-md-4 bg-gray">.col-xs-4 .col-md-4</div>
-                <div class="col-xs-12 col-md-4 bg-gray">.col-xs-12 .col-md-4</div>
-            </div>
+
+                <hr>
+            </section>
+
+
+            <!--
+                ============
+                GRID SECTION
+                ============
+            -->
+            <section id="grid-section">
+                <div class="my-5">
+                    <h1 class="block-heading">Responsive Grid</h1>
+                    <p>
+                        Nucleon comes with a flexbox-based grid system that falls back to floated inline-block elements in older browsers. Columns have 1rem of padding-based guttering to provide inner spacing.
+                    </p>
+                    <p>
+                        All breakpoints are mobile-first, meaning that they apply to that specific breakpoint and all breakpoints above it (unless a breakpoint for a larger size is also specified). For example, a .col-md-6 column is 6 columns wide for medium, large, and extra large devices, but not for small and extra small devices.
+                    </p>
+                    <p>
+                        Resize your browser window to see it in action.
+                    </p>
+                    <p><span id="screen-size"></span></p>
+
+                    <script type="text/javascript">
+                        'use strict';
+
+                        (function(){
+                            var counterWrapper = document.getElementById('screen-size');
+                            function getSize(num){
+                                if(num < 768) return 'Extra Small';
+                                if(num < 992) return 'Small';
+                                if(num < 1200) return 'Medium';
+                                if(num < 1500) return 'Large';
+                                return 'Extra Large';
+                            }
+                            function displayScreenSize(){
+                                counterWrapper.innerHTML =
+                                    '<strong>Current Screen Size:</strong> ' + window.innerWidth + 'px <small><em>'+ getSize(window.innerWidth) + '</em></small>';
+                            }
+                            displayScreenSize();
+                            window.addEventListener('resize', displayScreenSize);
+                        })();
+
+                    </script>
+
+                    <div class="row">
+                        <div class="col-md-6 col-xl-3 bg-gray">.col-md-6 .col-xl-3</div>
+                        <div class="col-md-6 col-xl-3 bg-gray">.col-md-6 .col-xl-3</div>
+                        <div class="col-md-6 col-xl-3 bg-gray">.col-md-6 .col-xl-3</div>
+                        <div class="col-md-6 col-xl-3 bg-gray">.col-md-6 .col-xl-3</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-4 bg-gray">
+                            .col-sm-6 .col-lg-4
+                        </div>
+                        <div class="col-sm-6 col-lg-4 bg-gray">
+                            .col-sm-6 .col-lg-4
+                        </div>
+                        <div class="col-lg-4 bg-gray">
+                            .col-lg-4
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-8 col-md-4 bg-gray">.col-xs-8 .col-md-4</div>
+                        <div class="col-xs-4 col-md-4 bg-gray">.col-xs-4 .col-md-4</div>
+                        <div class="col-xs-12 col-md-4 bg-gray">.col-xs-12 .col-md-4</div>
+                    </div>
 
 <code>
 &lt;!-- Responsive Grid Example --&gt;
@@ -125,73 +140,76 @@
     &lt;div class="col-xs-12 col-md-4"&gt;.col-xs-12 .col-md-4&lt;/div&gt;
 &lt;/div&gt;
 </code>
+                </div>
 
-            <br>
-            <h4>Media Query Breakpoints</h4>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Class</th>
-                        <th>Device Width</th>
-                    </tr>
-                </thead>
-                <tr>
-                    <td><span class="text-hl">.col-xs-*</span></td>
-                    <td>&lt; 768px <small><em>Extra Small</em></small></td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.col-sm-*</span></td>
-                    <td>&gt; 768px <small><em>Small</em></small></td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.col-md-*</span></td>
-                    <td>&gt; 992px <small><em>Medium</em></small></td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.col-lg-*</span></td>
-                    <td>&gt; 1200px <small><em>Large</em></small></td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.col-xl-*</span></td>
-                    <td>&gt; 1500px <small><em>Extra Large</em></small></td>
-                </tr>
-            </table>
+                <div class="my-5">
+                    <h2 class="block-heading">Media Query Breakpoints</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Class</th>
+                                <th>Device Width</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td><span class="text-hl">.col-xs-*</span></td>
+                            <td>&lt; 768px <small><em>Extra Small</em></small></td>
+                        </tr>
+                        <tr>
+                            <td><span class="text-hl">.col-sm-*</span></td>
+                            <td>&gt; 768px <small><em>Small</em></small></td>
+                        </tr>
+                        <tr>
+                            <td><span class="text-hl">.col-md-*</span></td>
+                            <td>&gt; 992px <small><em>Medium</em></small></td>
+                        </tr>
+                        <tr>
+                            <td><span class="text-hl">.col-lg-*</span></td>
+                            <td>&gt; 1200px <small><em>Large</em></small></td>
+                        </tr>
+                        <tr>
+                            <td><span class="text-hl">.col-xl-*</span></td>
+                            <td>&gt; 1500px <small><em>Extra Large</em></small></td>
+                        </tr>
+                    </table>
+                </div>
 
-            <h3>Simple Grid</h3>
-            <p>
-                Nucleon's simple grid columns are specified without a breakpoint (e.g. <span class="text-hl">.col-4</span>). These classes apply to screen sizes greater than 768px. For screen sizes less than 768px, simple columns are 100% width.
-            </p>
-            <p>
-                In other words, if screen size > 768px, all <span class="text-hl">.col-*</span> elements are N/12 columns wide, otherwise, they are 12 columns wide.
-            </p>
+                <div class="my-5">
+                    <h2 class="block-heading">Simple Grid</h2>
+                    <p>
+                        Nucleon's simple grid columns are specified without a breakpoint (e.g. <span class="text-hl">.col-4</span>). These classes apply to screen sizes greater than 768px. For screen sizes less than 768px, simple columns are 100% width.
+                    </p>
+                    <p>
+                        In other words, if screen size > 768px, all <span class="text-hl">.col-*</span> elements are N/12 columns wide, otherwise, they are 12 columns wide.
+                    </p>
 
-            <div class="row">
-                <div class="col-1 bg-gray">.col-1</div>
-                <div class="col-11 bg-gray">.col-11</div>
-            </div>
-            <div class="row">
-                <div class="col-2 bg-gray">.col-2</div>
-                <div class="col-10 bg-gray">.col-10</div>
-            </div>
-            <div class="row">
-                <div class="col-3 bg-gray">.col-3</div>
-                <div class="col-9 bg-gray">.col-9</div>
-            </div>
-            <div class="row">
-                <div class="col-4 bg-gray">.col-4</div>
-                <div class="col-8 bg-gray">.col-8</div>
-            </div>
-            <div class="row">
-                <div class="col-5 bg-gray">.col-5</div>
-                <div class="col-7 bg-gray">.col-7</div>
-            </div>
-            <div class="row">
-                <div class="col-6 bg-gray">.col-6</div>
-                <div class="col-6 bg-gray">.col-6</div>
-            </div>
-            <div class="row">
-                <div class="col-12 bg-gray">.col-12</div>
-            </div>
+                    <div class="row">
+                        <div class="col-1 bg-gray">.col-1</div>
+                        <div class="col-11 bg-gray">.col-11</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 bg-gray">.col-2</div>
+                        <div class="col-10 bg-gray">.col-10</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3 bg-gray">.col-3</div>
+                        <div class="col-9 bg-gray">.col-9</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 bg-gray">.col-4</div>
+                        <div class="col-8 bg-gray">.col-8</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5 bg-gray">.col-5</div>
+                        <div class="col-7 bg-gray">.col-7</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 bg-gray">.col-6</div>
+                        <div class="col-6 bg-gray">.col-6</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 bg-gray">.col-12</div>
+                    </div>
 
 <code>
 &lt;!-- Simple Grid Example --&gt;
@@ -214,18 +232,20 @@
 &lt;/div&gt;
 ...
 </code>
+                </div>
 
-            <h3>Auto-Sizing Columns</h3>
-            <p>
-                Columns can be auto-sized using the <span class="text-hl">.col-auto</span> class. These columns will be evenly sized in a row element for screen sizes greater than 768px. <em>Auto-sized columns only apply to browsers that support flexbox.</em>
-            </p>
-            <div class="row">
-                <div class="col-auto bg-gray">.col-auto</div>
-                <div class="col-auto bg-gray">.col-auto</div>
-                <div class="col-auto bg-gray">.col-auto</div>
-                <div class="col-auto bg-gray">.col-auto</div>
-                <div class="col-auto bg-gray">.col-auto</div>
-            </div>
+                <div class="my-5">
+                    <h2 class="block-heading">Auto-Sizing Columns</h2>
+                    <p>
+                        Columns can be auto-sized using the <span class="text-hl">.col-auto</span> class. These columns will be evenly sized in a row element for screen sizes greater than 768px. <em>Auto-sized columns only apply to browsers that support flexbox.</em>
+                    </p>
+                    <div class="row">
+                        <div class="col-auto bg-gray">.col-auto</div>
+                        <div class="col-auto bg-gray">.col-auto</div>
+                        <div class="col-auto bg-gray">.col-auto</div>
+                        <div class="col-auto bg-gray">.col-auto</div>
+                        <div class="col-auto bg-gray">.col-auto</div>
+                    </div>
 <code>
 &lt;!-- Auto-Size Columns Example --&gt;
 
@@ -237,84 +257,102 @@
     &lt;div class="col-auto"&gt;.col-auto&lt;/div&gt;
 &lt;/div&gt;
 </code>
-
-            <hr>
-
-            <h3>Typography</h3>
-            <div class="row">
-                <div class="col-8">
-                    <p>
-                        All font sizes are based on <span class="text-hl">rems</span>. Body font size is adjusted so that <span class="text-hl">1rem == 10px</span> (e.g. 1.6rem is 16px).
-                    </p>
-                    <p>
-                        Headings, labels, and buttons are Source Sans Pro, all other text is Open Sans. Fonts are loaded via CSS import from <a href="https://fonts.google.com" target="_blank" rel="noopener nofollow external">Google Fonts</a>
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus iste maxime nihil perferendis commodi, voluptate fuga, dicta aliquam vero labore, quaerat. Aliquam, et consequuntur, soluta repellat voluptas similique veritatis ad.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. In magni qui excepturi a sed, vel quasi culpa beatae sit, accusamus corrupti. Laborum, error! Ipsum amet, officiis aliquam laboriosam delectus voluptatum!
-                    </p>
                 </div>
-                <div id="headings" class="col-4">
-                    <h1>Heading 1</h1>&nbsp;&nbsp;<small>5rem (50px)</small><br>
-                    <h2>Heading 2</h2>&nbsp;&nbsp;<small>4.4rem (44px)</small><br>
-                    <h3>Heading 3</h3>&nbsp;&nbsp;<small>4rem (40px)</small><br>
-                    <h4>Heading 4</h4>&nbsp;&nbsp;<small>3.6rem (36px)</small><br>
-                    <h5>Heading 5</h5>&nbsp;&nbsp;<small>3.2rem (32px)</small><br>
-                    <h6>Heading 6</h6>&nbsp;&nbsp;<small>2.8rem (28px)</small><br>
-                </div>
-            </div>
 
-            <hr>
+                <hr>
 
-            <h3>Cards</h3>
+            </section>
 
-            <div class="row">
-                <div class="col-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title">Card Header</h5>
-                        </div>
-                        <div class="card-body">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui quas, mollitia officiis alias culpa animi, unde cumque quibusdam aperiam ullam illo, in voluptatem temporibus incidunt doloribus vitae. Aliquid, dignissimos, consectetur.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <span>Card Footer</span>
-                        </div>
+
+            <!--
+                ==================
+                TYPOGRAPHY SECTION
+                ==================
+            -->
+            <section id="typography-section">
+                <h1 class="block-heading">Typography</h1>
+                <div class="row">
+                    <div class="col-8">
+                        <p>
+                            All font sizes are based on <span class="text-hl">rems</span>. Body font size is adjusted so that <span class="text-hl">1rem == 10px</span> (e.g. 1.6rem is 16px).
+                        </p>
+                        <p>
+                            Headings, labels, and buttons are Source Sans Pro, all other text is Open Sans. Fonts are loaded via CSS import from <a href="https://fonts.google.com" target="_blank" rel="noopener nofollow external">Google Fonts</a>
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus iste maxime nihil perferendis commodi, voluptate fuga, dicta aliquam vero labore, quaerat. Aliquam, et consequuntur, soluta repellat voluptas similique veritatis ad.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. In magni qui excepturi a sed, vel quasi culpa beatae sit, accusamus corrupti. Laborum, error! Ipsum amet, officiis aliquam laboriosam delectus voluptatum!
+                        </p>
+                    </div>
+                    <div id="headings" class="col-4">
+                        <h1>Heading 1</h1>&nbsp;&nbsp;<small>5rem (50px)</small><br>
+                        <h2>Heading 2</h2>&nbsp;&nbsp;<small>4.4rem (44px)</small><br>
+                        <h3>Heading 3</h3>&nbsp;&nbsp;<small>4rem (40px)</small><br>
+                        <h4>Heading 4</h4>&nbsp;&nbsp;<small>3.6rem (36px)</small><br>
+                        <h5>Heading 5</h5>&nbsp;&nbsp;<small>3.2rem (32px)</small><br>
+                        <h6>Heading 6</h6>&nbsp;&nbsp;<small>2.8rem (28px)</small><br>
                     </div>
                 </div>
-                <div class="col-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title">Card Header</h5>
+
+                <hr>
+            </section>
+
+
+            <!--
+                =============
+                CARDS SECTION
+                =============
+            -->
+            <section id="cards-section">
+                <div class="my-5">
+                    <h1 class="block-heading">Cards</h1>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title">Card Header</h5>
+                                </div>
+                                <div class="card-body">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui quas, mollitia officiis alias culpa animi, unde cumque quibusdam aperiam ullam illo, in voluptatem temporibus incidunt doloribus vitae. Aliquid, dignissimos, consectetur.
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <span>Card Footer</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui quas, mollitia officiis alias culpa animi, unde cumque quibusdam aperiam ullam illo, in voluptatem temporibus incidunt doloribus vitae. Aliquid, dignissimos, consectetur.
-                            </p>
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title">Card Header</h5>
+                                </div>
+                                <div class="card-body">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui quas, mollitia officiis alias culpa animi, unde cumque quibusdam aperiam ullam illo, in voluptatem temporibus incidunt doloribus vitae. Aliquid, dignissimos, consectetur.
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <span>Card Footer</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-footer">
-                            <span>Card Footer</span>
+                        <div class="col-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title">Card Header</h5>
+                                </div>
+                                <div class="card-body">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui quas, mollitia officiis alias culpa animi, unde cumque quibusdam aperiam ullam illo, in voluptatem temporibus incidunt doloribus vitae. Aliquid, dignissimos, consectetur.
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <span>Card Footer</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title">Card Header</h5>
-                        </div>
-                        <div class="card-body">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui quas, mollitia officiis alias culpa animi, unde cumque quibusdam aperiam ullam illo, in voluptatem temporibus incidunt doloribus vitae. Aliquid, dignissimos, consectetur.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <span>Card Footer</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 <code>
 &lt;!-- Card Example --&gt;
@@ -336,46 +374,48 @@
     &lt;/div&gt;
 &lt;/div&gt;
 </code>
+                </div>
 
-            <h4>Cards with Images</h4>
-            <div class="row">
-                <div class="col-4">
-                    <div class="card">
-                        <img src="img/placeholder-1.jpg" alt="Placeholder Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Card Title</h5>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam quasi excepturi necessitatibus voluptatibus ullam explicabo sit, enim nobis quaerat maiores fugiat.
-                            </p>
-                            <div class="text-center"><button class="btn btn-primary">Read More</button></div>
+                <div class="my-5">
+                    <h2 class="block-heading">Cards with Images</h2>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="card">
+                                <img src="img/placeholder-1.jpg" alt="Placeholder Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card Title</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam quasi excepturi necessitatibus voluptatibus ullam explicabo sit, enim nobis quaerat maiores fugiat.
+                                    </p>
+                                    <div class="text-center"><button class="btn btn-primary">Read More</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card">
+                                <img src="img/placeholder-2.jpg" alt="Placeholder Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card Title</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam quasi excepturi necessitatibus voluptatibus ullam explicabo sit, enim nobis quaerat maiores fugiat.
+                                    </p>
+                                    <div class="text-center"><button class="btn btn-primary">Read More</button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="card">
+                                <img src="img/placeholder-3.jpg" alt="Placeholder Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card Title</h5>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam quasi excepturi necessitatibus voluptatibus ullam explicabo sit, enim nobis quaerat maiores fugiat.
+                                    </p>
+                                    <div class="text-center"><button class="btn btn-primary">Read More</button></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img src="img/placeholder-2.jpg" alt="Placeholder Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Card Title</h5>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam quasi excepturi necessitatibus voluptatibus ullam explicabo sit, enim nobis quaerat maiores fugiat.
-                            </p>
-                            <div class="text-center"><button class="btn btn-primary">Read More</button></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img src="img/placeholder-3.jpg" alt="Placeholder Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Card Title</h5>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam quasi excepturi necessitatibus voluptatibus ullam explicabo sit, enim nobis quaerat maiores fugiat.
-                            </p>
-                            <div class="text-center"><button class="btn btn-primary">Read More</button></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 <code>
 &lt;!-- Image Card Example --&gt;
@@ -391,52 +431,61 @@
     &lt;/div&gt;
 &lt;/div&gt;
 </code>
+                </div>
 
-            <hr>
+                <hr>
+            </section>
 
-            <h3>Buttons</h3>
-            <p>
-                Nucleon comes with 5 button types: standard, primary, success, danger, and warn. An element is styled as a button if it has the <span class="text-hl">.btn</span> class or if it is an input of <span class="text-hl">type="button"</span> or <span class="text-hl">type="submit"</span>. For 100% width buttons, use the <span class="text-hl">.btn-block</span> class.
-            </p>
-            <div class="row">
-                <div class="col-12">
-                    <label>.btn</label>
-                    <input class="btn" type="button" role="button" value="Button Input">
-                    <a href="#" class="btn">Anchor Button</a>
-                    <button type="button" role="button">Button Element</button>
-                    <input type="submit" role="button" value="Submit Button">
+
+            <!--
+                ===============
+                BUTTONS SECTION
+                ===============
+            -->
+            <section id="buttons-section">
+                <h1 class="block-heading">Buttons</h1>
+                <p>
+                    Nucleon comes with 5 button types: standard, primary, success, danger, and warn. An element is styled as a button if it has the <span class="text-hl">.btn</span> class or if it is an input of <span class="text-hl">type="button"</span> or <span class="text-hl">type="submit"</span>. For 100% width buttons, use the <span class="text-hl">.btn-block</span> class.
+                </p>
+                <div class="row">
+                    <div class="col-12">
+                        <label>.btn</label>
+                        <input class="btn" type="button" role="button" value="Button Input">
+                        <a href="#" class="btn">Anchor Button</a>
+                        <button type="button" role="button">Button Element</button>
+                        <input type="submit" role="button" value="Submit Button">
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-3">
-                    <label>.btn.btn-primary</label>
-                    <input class="btn btn-primary" type="button" role="button" value="Button Input">
-                    <a href="#" class="btn btn-primary">Anchor Button</a>
-                    <button class="btn-primary" type="button" role="button">Button Element</button>
-                    <input class="btn-primary" type="submit" role="button" value="Submit Button">
+                <div class="row">
+                    <div class="col-3">
+                        <label>.btn.btn-primary</label>
+                        <input class="btn btn-primary" type="button" role="button" value="Button Input">
+                        <a href="#" class="btn btn-primary">Anchor Button</a>
+                        <button class="btn-primary" type="button" role="button">Button Element</button>
+                        <input class="btn-primary" type="submit" role="button" value="Submit Button">
+                    </div>
+                    <div class="col-3">
+                        <label>.btn.btn-success</label>
+                        <input class="btn btn-success" type="button" role="button" value="Button Input">
+                        <a href="#" class="btn btn-success">Anchor Button</a>
+                        <button class="btn-success" type="button" role="button">Button Element</button>
+                        <input class="btn-success" type="submit" role="button" value="Submit Button">
+                    </div>
+                    <div class="col-3">
+                        <label>.btn.btn-danger</label>
+                        <input class="btn btn-danger" type="button" role="button" value="Button Input">
+                        <a href="#" class="btn btn-danger">Anchor Button</a>
+                        <button class="btn-danger" type="button" role="button">Button Element</button>
+                        <input class="btn-danger" type="submit" role="button" value="Submit Button">
+                    </div>
+                    <div class="col-3">
+                        <label>.btn.btn-warn</label>
+                        <input class="btn btn-warn" type="button" role="button" value="Button Input">
+                        <a href="#" class="btn btn-warn">Anchor Button</a>
+                        <button class="btn-warn" type="button" role="button">Button Element</button>
+                        <input class="btn-warn" type="submit" role="button" value="Submit Button">
+                    </div>
                 </div>
-                <div class="col-3">
-                    <label>.btn.btn-success</label>
-                    <input class="btn btn-success" type="button" role="button" value="Button Input">
-                    <a href="#" class="btn btn-success">Anchor Button</a>
-                    <button class="btn-success" type="button" role="button">Button Element</button>
-                    <input class="btn-success" type="submit" role="button" value="Submit Button">
-                </div>
-                <div class="col-3">
-                    <label>.btn.btn-danger</label>
-                    <input class="btn btn-danger" type="button" role="button" value="Button Input">
-                    <a href="#" class="btn btn-danger">Anchor Button</a>
-                    <button class="btn-danger" type="button" role="button">Button Element</button>
-                    <input class="btn-danger" type="submit" role="button" value="Submit Button">
-                </div>
-                <div class="col-3">
-                    <label>.btn.btn-warn</label>
-                    <input class="btn btn-warn" type="button" role="button" value="Button Input">
-                    <a href="#" class="btn btn-warn">Anchor Button</a>
-                    <button class="btn-warn" type="button" role="button">Button Element</button>
-                    <input class="btn-warn" type="submit" role="button" value="Submit Button">
-                </div>
-            </div>
 
 <code>
 &lt;!-- Standard Buttons --&gt;
@@ -469,76 +518,89 @@
 &lt;input type="submit" class="btn btn-warn" value="Warning Button"&gt;
 </code>
 
-            <hr>
+                <hr>
+            </section>
 
-
-            <h3>Alerts</h3>
-            <div class="row">
-                <label>.alert</label>
-                <div class="alert">
-                    &lt;div class="alert"&gt;Basic alert&lt;/div&gt;
-                </div>
-                <label>.alert.info</label>
-                <div class="alert info">
-                    &lt;div class="alert info"&gt;Info Alert&lt;/div&gt;
-                </div>
-                <label>.alert.warn</label>
-                <div class="alert warn">
-                    &lt;div class="alert warn"&gt;Warning Alert&lt;/div&gt;
-                </div>
-                <label>.alert.danger</label>
-                <div class="alert danger">
-                    &lt;div class="alert danger"&gt;Danger Alert&lt;/div&gt;
-                </div>
-                <label>.alert.success</label>
-                <div class="alert success">
-                    &lt;div class="alert success"&gt;Success Alert&lt;/div&gt;
-                </div>
-            </div>
-
-            <hr>
-
-
-            <h3>Forms</h3>
-
-            <form action="" method="GET">
+            <!--
+                ==============
+                ALERTS SECTION
+                ==============
+            -->
+            <section id="alerts-section">
+                <h1 class="block-heading">Alerts</h1>
                 <div class="row">
-                    <div class="col-6">
-                        <label for="fName">First Name</label>
-                        <input type="text" id="fName" name="fName" placeholder="Linus">
+                    <label>.alert</label>
+                    <div class="alert">
+                        &lt;div class="alert"&gt;Basic alert&lt;/div&gt;
                     </div>
-                    <div class="col-6">
-                        <label for="lName">Last Name</label>
-                        <input type="text" id="lName" name="lName" placeholder="Torvalds">
+                    <label>.alert.info</label>
+                    <div class="alert info">
+                        &lt;div class="alert info"&gt;Info Alert&lt;/div&gt;
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-8">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" placeholder="Let's Connect">
+                    <label>.alert.warn</label>
+                    <div class="alert warn">
+                        &lt;div class="alert warn"&gt;Warning Alert&lt;/div&gt;
                     </div>
-                    <div class="col-4">
-                        <label for="reason">Reason for Contact</label>
-                        <select name="reason" id="reason">
-                            <option value="">Select One</option>
-                            <option value="1">Let's Connect</option>
-                            <option value="2">Give Props</option>
-                            <option value="3">Make a Suggestion</option>
-                        </select>
+                    <label>.alert.danger</label>
+                    <div class="alert danger">
+                        &lt;div class="alert danger"&gt;Danger Alert&lt;/div&gt;
+                    </div>
+                    <label>.alert.success</label>
+                    <div class="alert success">
+                        &lt;div class="alert success"&gt;Success Alert&lt;/div&gt;
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <label for="message">Message</label>
-                        <textarea name="message" id="message" rows="4" placeholder="Your Message"></textarea>
+
+                <hr>
+            </section>
+
+
+            <!--
+                =============
+                FORMS SECTION
+                =============
+            -->
+            <section id="forms-section">
+                <h1 class="block-heading">Forms</h1>
+
+                <form action="" method="GET">
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="fName">First Name</label>
+                            <input type="text" id="fName" name="fName" placeholder="Linus">
+                        </div>
+                        <div class="col-6">
+                            <label for="lName">Last Name</label>
+                            <input type="text" id="lName" name="lName" placeholder="Torvalds">
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <input type="submit" class="btn btn-primary" value="Submit">
+                    <div class="row">
+                        <div class="col-8">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Let's Connect">
+                        </div>
+                        <div class="col-4">
+                            <label for="reason">Reason for Contact</label>
+                            <select name="reason" id="reason">
+                                <option value="">Select One</option>
+                                <option value="1">Let's Connect</option>
+                                <option value="2">Give Props</option>
+                                <option value="3">Make a Suggestion</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-            </form>
+                    <div class="row">
+                        <div class="col-12">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" rows="4" placeholder="Your Message"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <input type="submit" class="btn btn-primary" value="Submit">
+                        </div>
+                    </div>
+                </form>
 
 <code>
 &lt;form action="" method="GET"&gt;
@@ -581,200 +643,224 @@
 &lt;/form&gt;
 </code>
 
-            <hr>
+                <hr>
 
-            <h3>Colors</h3>
-            <p>
-                Nucleon provides the following background, text, and border colors. Each color also comes with a light and dark version. Light/dark variants use the Sass functions <span class="text-hl">lighten( )</span> and <span class="text-hl">darken( )</span> at 15%.
-            </p>
-            <div class="grid color-grid">
-                <div class="row text-center">
-                    <div class="col-2 bg-red text-light">Red</div>
-                    <div class="col-2 bg-orange text-light">Orange</div>
-                    <div class="col-2 bg-amber text-dark">Amber</div>
-                    <div class="col-2 bg-yellow text-dark">Yellow</div>
+            </section>
 
-                    <div class="col-2 bg-green text-light">Green</div>
-                    <div class="col-2 bg-teal text-light">Teal</div>
-                    <div class="col-2 bg-aqua text-dark">Aqua</div>
-                    <div class="col-2 bg-nucleon text-light">Nucleon</div>
-                    <div class="col-2 bg-blue text-light">Blue</div>
-                    <div class="col-2 bg-navy text-light">Navy</div>
 
-                    <div class="col-2 bg-purple text-light">Purple</div>
-                    <div class="col-2 bg-plum text-light">Plum</div>
-                    <div class="col-2 bg-pink text-light">Pink</div>
-                    <div class="col-2 bg-fuscia text-light">Fuscia</div>
+            <!--
+                ==============
+                COLORS SECTION
+                ==============
+            -->
+            <section id="colors-section">
+                <h1 class="block-heading">Colors</h1>
+                <p>
+                    Nucleon provides the following background, text, and border colors. Each color also comes with a light and dark version. Light/dark variants use the Sass functions <span class="text-hl">lighten( )</span> and <span class="text-hl">darken( )</span> at 15%.
+                </p>
+                <div class="color-grid my-3">
+                    <div class="row text-center">
+                        <div class="col-2 bg-red text-light">Red</div>
+                        <div class="col-2 bg-orange text-light">Orange</div>
+                        <div class="col-2 bg-amber text-dark">Amber</div>
+                        <div class="col-2 bg-yellow text-dark">Yellow</div>
+
+                        <div class="col-2 bg-green text-light">Green</div>
+                        <div class="col-2 bg-teal text-light">Teal</div>
+                        <div class="col-2 bg-aqua text-dark">Aqua</div>
+                        <div class="col-2 bg-nucleon text-light">Nucleon</div>
+                        <div class="col-2 bg-blue text-light">Blue</div>
+                        <div class="col-2 bg-navy text-light">Navy</div>
+
+                        <div class="col-2 bg-purple text-light">Purple</div>
+                        <div class="col-2 bg-plum text-light">Plum</div>
+                        <div class="col-2 bg-pink text-light">Pink</div>
+                        <div class="col-2 bg-fuscia text-light">Fuscia</div>
+                    </div>
                 </div>
-            </div>
-            <p class="orange-select">
-                Background colors are specified by using the <span class="text-hl">.bg-colorname</span> or <span class="text-hl">.bg-colorname-light/dark</span> classes. For example, to give an element a green background, give it the class <span class="text-hl">.bg-green</span>. For a dark green background, use <span class="text-hl">.bg-green-dark</span>. Note that background classes do not change text color.
-            </p>
-            <p>
-                Text is colored using the <span class="text-hl">.text-colorname</span> or <span class="text-hl">.text-colorname-light/dark</span> classes. For example, to make some text red, apply the <span class="text-hl">.text-red</span> class.
-            </p>
-            <p>
-                Borders are colored using the <span class="text-hl">.border-colorname</span> or <span class="text-hl">.border-colorname-light/dark</span> classes. To make an elements border dark purple, give it the <span class="text-hl">.border-purple-dark</span> class. Note that the <span class="text-hl">.border-colorname</span> classes do not add borders, they only change the <span class="text-hl">border-color</span> property. To add a border, use the <span class="text-hl">.border</span> or <span class="text-hl">border-2</span> classes.
-            </p>
-            <hr>
+                <p class="orange-select">
+                    Background colors are specified by using the <span class="text-hl">.bg-colorname</span> or <span class="text-hl">.bg-colorname-light/dark</span> classes. For example, to give an element a green background, give it the class <span class="text-hl">.bg-green</span>. For a dark green background, use <span class="text-hl">.bg-green-dark</span>. Note that background classes do not change text color. You can apply the <span class="text-hl">.text-light</span> or <span class="text-hl">.text-dark</span> classes for better contrast.
+                </p>
+                <p>
+                    Text is colored using the <span class="text-hl">.text-colorname</span> or <span class="text-hl">.text-colorname-light/dark</span> classes. For example, to make some text red, apply the <span class="text-hl">.text-red</span> class.
+                </p>
+                <p>
+                    Borders are colored using the <span class="text-hl">.border-colorname</span> or <span class="text-hl">.border-colorname-light/dark</span> classes. To make an elements border dark purple, give it the <span class="text-hl">.border-purple-dark</span> class. Note that the <span class="text-hl">.border-colorname</span> classes do not add borders, they only change the <span class="text-hl">border-color</span> property. To add a border, use the <span class="text-hl">.border</span> or <span class="text-hl">border-2</span> classes.
+                </p>
 
-            <h3>Utility Classes</h3>
-            <table>
-                <tr>
-                    <td colspan="2"><h5 class="mt-2 mb-0">Floats</h5></td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.cb</span></td>
-                    <td>Clear floats</td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.float-left</span> <span class="text-hl">.pull-left</span></td>
-                    <td>Float left</td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.float-right</span> <span class="text-hl">.pull-right</span></td>
-                    <td>Float right</td>
-                </tr>
-                <tr>
-                    <td colspan="2"><h5 class="mt-2 mb-0">Sizing</h5></td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.full-width</span></td>
-                    <td>Full Width</td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.max-full-width</span></td>
-                    <td>Max-width of 100% - Good for responsive images</td>
-                </tr>
-                <tr>
-                    <td colspan="2"><h5 class="mt-2 mb-0">Borders</h5></td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.border</span></td>
-                    <td>1px solid border</td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.border-2</span></td>
-                    <td>2px solid border</td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.rounded</span></td>
-                    <td>3px border radius</td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.round</span></td>
-                    <td>50% border radius (circle)</td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.square</span></td>
-                    <td>No border radius</td>
-                </tr>
-                <tr>
-                    <td colspan="2"><h5 class="mt-2 mb-0">Margins</h5></td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.mt-0</span> to <span class="text-hl">.mt-5</span></td>
-                    <td>Margin top in <span class="text-hl">rems</span></td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.mb-0</span> to <span class="text-hl">.mb-5</span></td>
-                    <td>Margin bottom in <span class="text-hl">rems</span></td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.my-0</span> to <span class="text-hl">.my-5</span></td>
-                    <td>Margin top &amp; bottom in <span class="text-hl">rems</span></td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.ml-0</span> to <span class="text-hl">.ml-5</span></td>
-                    <td>Margin left in <span class="text-hl">rems</span></td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.mr-0</span> to <span class="text-hl">.mr-5</span></td>
-                    <td>Margin right in <span class="text-hl">rems</span></td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.mx-0</span> to <span class="text-hl">.mx-5</span></td>
-                    <td>Margin left &amp; right in <span class="text-hl">rems</span></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><h5 class="mt-2 mb-0">Padding</h5></td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.pt-0</span> to <span class="text-hl">.pt-5</span></td>
-                    <td>Padding top in <span class="text-hl">rems</span></td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.pb-0</span> to <span class="text-hl">.pb-5</span></td>
-                    <td>Padding bottom in <span class="text-hl">rems</span></td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.py-0</span> to <span class="text-hl">.py-5</span></td>
-                    <td>Padding top &amp; bottom in <span class="text-hl">rems</span></td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.pl-0</span> to <span class="text-hl">.pl-5</span></td>
-                    <td>Padding left in <span class="text-hl">rems</span></td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.pr-0</span> to <span class="text-hl">.pr-5</span></td>
-                    <td>Padding right in <span class="text-hl">rems</span></td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.px-0</span> to <span class="text-hl">.px-5</span></td>
-                    <td>Padding left &amp; right in <span class="text-hl">rems</span></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><h5 class="mt-2 mb-0">Text</h5></td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.text-strike</span></td>
-                    <td>Strikethrough text</td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.text-ul</span></td>
-                    <td>Underline text</td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.text-ul-none</span></td>
-                    <td>No underline text</td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.text-cntr</span></td>
-                    <td>Center text</td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.text-left</span></td>
-                    <td>Left Align</td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.text-right</span></td>
-                    <td>Right Align</td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.text-justify</span></td>
-                    <td>Justify Text</td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.text-hl</span> <span class="text-hl">.pill</span></td>
-                    <td>Highlight text</td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.text-dark</span></td>
-                    <td>Dark Text <i>#383838</i></td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.text-light</span></td>
-                    <td>Light Text <i>#FEFEFE</i></td>
-                </tr><tr>
-                    <td><span class="text-hl">.strong</span></td>
-                    <td>Bold Text</td>
-                </tr>
-                <tr>
-                    <td><span class="text-hl">.italic</span></td>
-                    <td>Italic Text</td>
-                </tr>
-            </table>
+                <hr>
+            </section>
+
+
+
+            <!--
+                =================
+                UTILITIES SECTION
+                =================
+            -->
+            <section id="utilites-section">
+                <h1 class="block-heading">Utility Classes</h1>
+                <table>
+                    <tr>
+                        <td colspan="2"><h5 class="mt-2 mb-0">Floats</h5></td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.cb</span></td>
+                        <td>Clear floats</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.float-left</span> <span class="text-hl">.pull-left</span></td>
+                        <td>Float left</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.float-right</span> <span class="text-hl">.pull-right</span></td>
+                        <td>Float right</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><h5 class="mt-2 mb-0">Sizing</h5></td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.full-width</span></td>
+                        <td>Full Width</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.max-full-width</span></td>
+                        <td>Max-width of 100% - Good for responsive images</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><h5 class="mt-2 mb-0">Borders</h5></td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.border</span></td>
+                        <td>1px solid border</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.border-2</span></td>
+                        <td>2px solid border</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.rounded</span></td>
+                        <td>3px border radius</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.round</span></td>
+                        <td>50% border radius (circle)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.square</span></td>
+                        <td>No border radius</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><h5 class="mt-2 mb-0">Margins</h5></td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.mt-0</span> to <span class="text-hl">.mt-5</span></td>
+                        <td>Margin top in <span class="text-hl">rems</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.mb-0</span> to <span class="text-hl">.mb-5</span></td>
+                        <td>Margin bottom in <span class="text-hl">rems</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.my-0</span> to <span class="text-hl">.my-5</span></td>
+                        <td>Margin top &amp; bottom in <span class="text-hl">rems</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.ml-0</span> to <span class="text-hl">.ml-5</span></td>
+                        <td>Margin left in <span class="text-hl">rems</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.mr-0</span> to <span class="text-hl">.mr-5</span></td>
+                        <td>Margin right in <span class="text-hl">rems</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.mx-0</span> to <span class="text-hl">.mx-5</span></td>
+                        <td>Margin left &amp; right in <span class="text-hl">rems</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><h5 class="mt-2 mb-0">Padding</h5></td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.pt-0</span> to <span class="text-hl">.pt-5</span></td>
+                        <td>Padding top in <span class="text-hl">rems</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.pb-0</span> to <span class="text-hl">.pb-5</span></td>
+                        <td>Padding bottom in <span class="text-hl">rems</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.py-0</span> to <span class="text-hl">.py-5</span></td>
+                        <td>Padding top &amp; bottom in <span class="text-hl">rems</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.pl-0</span> to <span class="text-hl">.pl-5</span></td>
+                        <td>Padding left in <span class="text-hl">rems</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.pr-0</span> to <span class="text-hl">.pr-5</span></td>
+                        <td>Padding right in <span class="text-hl">rems</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.px-0</span> to <span class="text-hl">.px-5</span></td>
+                        <td>Padding left &amp; right in <span class="text-hl">rems</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><h5 class="mt-2 mb-0">Text</h5></td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.text-strike</span></td>
+                        <td>Strikethrough text</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.text-ul</span></td>
+                        <td>Underline text</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.text-ul-none</span></td>
+                        <td>No underline text</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.text-cntr</span></td>
+                        <td>Center text</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.text-left</span></td>
+                        <td>Left Align</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.text-right</span></td>
+                        <td>Right Align</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.text-justify</span></td>
+                        <td>Justify Text</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.text-hl</span> <span class="text-hl">.pill</span></td>
+                        <td>Highlight text</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.text-dark</span></td>
+                        <td>Dark Text <i>#383838</i></td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.text-light</span></td>
+                        <td>Light Text <i>#FEFEFE</i></td>
+                    </tr><tr>
+                        <td><span class="text-hl">.strong</span></td>
+                        <td>Bold Text</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-hl">.italic</span></td>
+                        <td>Italic Text</td>
+                    </tr>
+                </table>
+            </section>
+
+        <!-- End Main Container -->
         </div>
+
+    <!-- End Page Wrapper -->
     </div>
 
     <footer class="text-center">

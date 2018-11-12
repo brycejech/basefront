@@ -26,11 +26,13 @@
 #headings h1, #headings h2, #headings h3, #headings h4, #headings h5, #headings h6 {
   display: inline-block; }
 
-.grid {
-  margin-bottom: 3rem; }
-
 .color-grid [class*="col-"] {
   min-height: 50px; }
+
+.block-heading {
+  text-decoration: underline;
+  -webkit-text-decoration-color: #31BBE0;
+  text-decoration-color: #31BBE0; }
 
 footer {
   color: #FDFDFD;
